@@ -53,8 +53,6 @@ yabai -m rule --add title='^Archive Utility$' manage=off
 yabai -m rule --add title='Preferences$' manage=off
 yabai -m rule --add title='Settings$' manage=off
 
-
-
 # Layout: bsp, stack or float
 yabai -m config layout bsp
 

@@ -1,17 +1,14 @@
-# Hyper key: ctrl + cmd + alt + shift
-
-
 # -- Changing Window Focus --
 
 # Change window focus within space
-ctrl + cmd + alt + shift - j : yabai -m window --focus south
-ctrl + cmd + alt + shift - k : yabai -m window --focus north
-ctrl + cmd + alt + shift - h : yabai -m window --focus west
-ctrl + cmd + alt + shift - l : yabai -m window --focus east
+hyper - j : yabai -m window --focus south
+hyper - k : yabai -m window --focus north
+hyper - h : yabai -m window --focus west
+hyper - l : yabai -m window --focus east
 
 # Change focus between external displays (left and right)
-ctrl + cmd + alt + shift - s: yabai -m display --focus west
-ctrl + cmd + alt + shift - g: yabai -m display --focus east
+hyper - s: yabai -m display --focus west
+hyper - g: yabai -m display --focus east
 
 
 # -- Modifying the Layout --
@@ -31,7 +28,7 @@ shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 # -- Modifying Window Size --
 
 # Maximize a window
-shift + alt - m : yabai -m window --toggle zoom-fullscreen
+hyper - m : yabai -m window --toggle zoom-fullscreen
 
 # Balance out tree of windows (resize to occupy same area)
 shift + alt - e : yabai -m space --balance
