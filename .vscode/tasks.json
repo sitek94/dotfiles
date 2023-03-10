@@ -23,7 +23,8 @@
       "dependsOn": ["git: commit all", "git: push"],
       "presentation": {
         "reveal": "never"
-      }
+      },
+      "problemMatcher": []
     }
   ]
 }
