@@ -12,10 +12,9 @@
       "command": "git push"
     },
     {
-      "label": "dotfiles: save (commit all changes with default message then push)",
+      "label": "dotfiles: push",
       "dependsOrder": "sequence",
-      "dependsOn": ["git: commit all", "git: push"],
-      "problemMatcher": []
+      "dependsOn": ["git: commit all", "git: push"]
     }
   ]
 }
