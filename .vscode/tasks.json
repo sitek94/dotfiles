@@ -14,6 +14,9 @@
     {
       "label": "dotfiles: push",
       "dependsOrder": "sequence",
+      "presentation": {
+        "reveal": "never"
+      },
       "dependsOn": ["git: commit all", "git: push"]
     }
   ]
