@@ -28,7 +28,7 @@ yabai -m config window_gap     12
 yabai -m config mouse_follows_focus on
 
 # Set mouse interaction modifier key (default: fn)
-yabai -m config mouse_modifier alt
+yabai -m config mouse_modifier hyper
 
 # Set modifier + left-click drag to move window (default: move)
 yabai -m config mouse_action1 move
@@ -81,7 +81,7 @@ yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 
 # Whenever a window is dragged to a center of another window swap them
-yabai -m config mouse_drop_actio
+yabai -m config mouse_drop_action
 
 # Disable specific apps
 yabai -m rule --add app="^Calculators$" manage=off
