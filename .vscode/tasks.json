@@ -4,20 +4,26 @@
     {
       "label": "git: commit all",
       "type": "shell",
-      "command": "git add . && git commit -m \"update\""
+      "command": "git add . && git commit -m \"update\"",
+      "presentation": {
+        "reveal": "never"
+      }
     },
     {
       "label": "git: push",
       "type": "shell",
-      "command": "git push"
+      "command": "git push",
+      "presentation": {
+        "reveal": "never"
+      }
     },
     {
       "label": "dotfiles: push",
       "dependsOrder": "sequence",
+      "dependsOn": ["git: commit all", "git: push"],
       "presentation": {
         "reveal": "never"
-      },
-      "dependsOn": ["git: commit all", "git: push"]
+      }
     }
   ]
 }
