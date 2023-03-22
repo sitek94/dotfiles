@@ -54,4 +54,5 @@ yabai -m rule --add app="^System Settings$" manage=off
 
 # Disable for system preferences and settings windows/apps
 yabai -m rule --add title="Preferences$" manage=off
+yabai -m rule --add title="Rename" manage=off
 yabai -m rule --add title="Settings$" manage=off
