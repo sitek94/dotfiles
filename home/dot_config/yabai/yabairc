@@ -58,3 +58,13 @@ yabai -m rule --add title="ESLint" manage=off
 yabai -m rule --add title="Preferences$" manage=off
 yabai -m rule --add title="Rename" manage=off
 yabai -m rule --add title="Settings$" manage=off
+
+# make JetBrains products popup windows float
+apps='^(IntelliJ IDEA|WebStorm|GoLand|PyCharm)$'
+yabai -m rule --add app="JetBrains Toolbox" manage=off
+yabai -m rule --add app="${apps}" manage=off
+yabai -m rule --add app="${apps}" title="( – )" manage=on
+
+# VSCode
+# yabai -m rule --add app="^Code$" manage=off
+# yabai -m rule --add app="^Code$" title="( – )" manage=on
