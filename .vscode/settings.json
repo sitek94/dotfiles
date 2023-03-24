@@ -1,4 +1,7 @@
 {
   "git.enableSmartCommit": true,
-  "git.rebaseWhenSync": true
+  "git.rebaseWhenSync": true,
+  "files.associations": {
+    "yabairc": "shellscript"
+  }
 }

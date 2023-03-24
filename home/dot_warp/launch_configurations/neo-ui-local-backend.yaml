@@ -1,0 +1,47 @@
+# Warp Launch Configuration
+#
+#
+# Use this to start a certain configuration of windows, tabs, and panes
+# Open the launch configuration palette to access and open any launch configuration
+#
+# This file defines your launch configuration
+# More on how to do so here:
+# https://docs.warp.dev/features/session-management/launch-configurations
+#
+# All launch configurations are stored under ~/.warp/launch_configurations/
+# Edit them anytime!
+#
+# You can also add commands that run on-start for your launch configurations like so:
+# ---
+# name: Example with Command
+# windows:
+#  - tabs:
+#      - layout:
+#          cwd: /Users/warp-user/project
+#          commands:
+#            - exec: code .
+
+---
+name: Neo-ui (local backend)
+windows:
+  - tabs:
+      - title: neo-ui
+        layout:
+          cwd: /Users/maciek/code/neo-ui
+          commands:
+            - exec: yarn start
+        color: green
+      - title: local-router
+        layout:
+          cwd: /Users/maciek/code/neo-ui/packages/local-router
+          commands:
+            - exec:
+                node -r dotenv/config setup.js dotenv_config_path='.env.local'
+            - exec: yarn start
+        color: yellow
+      - title: backend
+        layout:
+          cwd: /Users/maciek/code/backend
+          commands:
+            - exec: yarn nx serve neo-backend --watch
+        color: magenta
