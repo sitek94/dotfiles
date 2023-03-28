@@ -1,4 +1,4 @@
-name: Neo-ui (local backend)
+name: Neo-ui (prod-dev)
 windows:
   - tabs:
       - title: neo-ui
@@ -12,12 +12,7 @@ windows:
           cwd: /Users/maciek/code/neo-ui/packages/local-router
           commands:
             - exec:
-                node -r dotenv/config setup.js dotenv_config_path='.env.local'
+                node -r dotenv/config setup.js
+                dotenv_config_path='.env.prod-dev'
             - exec: yarn start
         color: yellow
-      - title: backend
-        layout:
-          cwd: /Users/maciek/code/backend
-          commands:
-            - exec: yarn nx serve neo-backend --watch
-        color: magenta
