@@ -1,4 +1,4 @@
-name: Neo-ui (prod-dev)
+name: Neo-ui (prod-test)
 windows:
   - tabs:
       - title: neo-ui
@@ -11,5 +11,5 @@ windows:
         layout:
           cwd: /Users/maciek/code/neo-ui/packages/local-router
           commands:
-            - exec: ./.maciek/start-prod-dev.sh
+            - exec: ./.maciek/start-prod-test.sh
         color: yellow
