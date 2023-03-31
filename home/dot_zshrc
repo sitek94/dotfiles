@@ -94,3 +94,6 @@ alias chezmoipush="chezmoi git add . && chezmoi git -- commit -m 'update dotfile
 alias yabr="brew services restart yabai"
 alias yabs="brew services start yabai"
 alias yabk="brew services stop yabai"
+
+# Utils
+killport() { lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9 ;}
