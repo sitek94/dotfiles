@@ -103,4 +103,14 @@ alias yabs="brew services start yabai"
 alias yabk="brew services stop yabai"
 
 # Utils
-killport() { lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9 ;}
+killport() {
+  if lsof -i tcp:"$*" >/dev/null 2>&1; then
+    if lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9 2>/dev/null; then
+      echo -e "${GREEN}Successfully killed process running on port $*${RESET}"
+    else
+      echo -e "${RED}Error: Something went wrong while trying to kill the process on port $*${RESET}"
+    fi
+  else
+    echo -e "${YELLOW}There is nothing running on port $*${RESET}"
+  fi
+}
