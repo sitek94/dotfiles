@@ -87,8 +87,15 @@ export PATH=$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:/usr/local/bin:/usr/l
 
 # ALIASES
 
+# Dotfiles
+alias sz="source ~/.zshrc"
+
 # Chezmoi
-alias chezmoipush="chezmoi git add . && chezmoi git -- commit -m 'update dotfiles' && chezmoi git push"
+alias cze="chezmoi edit"
+alias czu="chezmoi update"
+alias cza="chezmoi apply"
+alias czp="chezmoi git add . && chezmoi git -- commit -m 'update dotfiles' && chezmoi git push"
+
 
 # Yabai 
 alias yabr="brew services restart yabai"
