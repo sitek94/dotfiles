@@ -34,6 +34,8 @@ export PATH=$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:/usr/local/bin:/usr/l
 
 # Open webstorm app
 alias ws="open -a 'WebStorm.app'"
+# Open VSCode Insiders
+alias vsc="open -a 'Visual Studio Code - Insiders.app'"
 
 # ts-node
 alias ts="ts-node"
