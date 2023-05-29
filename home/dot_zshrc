@@ -52,6 +52,10 @@ alias yabr="brew services restart yabai"
 alias yabs="brew services start yabai"
 alias yabk="brew services stop yabai"
 
+# Dotfiles, zsh
+alias sz="source ~/.zshrc"
+alias dfu="czu && yabr"
+
 # Utils
 killport() {
   if lsof -i tcp:"$*" >/dev/null 2>&1; then

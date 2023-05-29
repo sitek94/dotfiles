@@ -41,15 +41,19 @@ yabai -m config mouse_action2 resize
 # Whenever a window is dragged to a center of another window swap them
 yabai -m config mouse_drop_action swap
 
+# floating windows are always on top (default: off)
+# yabai -m config window_topmost on
+
 # Disable specific apps
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add title="^Archive Utility$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^Finder$" manage=off
+# yabai -m rule --add app="^Calendar$" manage=off
+# yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Kap$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Microsoft Teams$" manage=off
-yabai -m rule --add app="^Music$" manage=off
+# yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Raycast*" manage=off
 yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
