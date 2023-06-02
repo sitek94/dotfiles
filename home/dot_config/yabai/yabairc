@@ -66,6 +66,7 @@ yabai -m rule --add title="ESLint" manage=off
 yabai -m rule --add title="Preferences$" manage=off
 yabai -m rule --add title="Rename" manage=off
 yabai -m rule --add title="Settings$" manage=off
+yabai -m rule --add title="New Note$" manage=off
 
 # make JetBrains products popup windows float
 apps='^(IntelliJ IDEA|WebStorm|GoLand|PyCharm)$'
