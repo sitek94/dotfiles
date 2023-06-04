@@ -3,6 +3,10 @@
 # Credits to @mickaelperrin
 # https://gist.github.com/mickaelperrin/4b72fa46dec0aa8935b170685dac507d
 
+
+# TODO: Deleting empty spaces
+# Ideas: https://stackoverflow.com/questions/66892255/how-to-write-applescript-to-that-closes-a-desktop-space
+
 MONITORS=$(yabai -m query --displays | jq '.[].index')
 MONITORS_COUNT=$(yabai -m query --displays | jq '. | length')
 
