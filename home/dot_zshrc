@@ -25,12 +25,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source $(brew --prefix nvm)/nvm.sh
-
 # Custom $PATH with extra locations.
 export PATH=$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/go/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
 
 # ALIASES
+
+# better cat with syntax highlighting
+alias cat="bat"
 
 # Open webstorm app
 alias ws="open -a 'WebStorm.app'"
