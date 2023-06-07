@@ -58,8 +58,9 @@ yabai -m rule --add app="^Raycast*" manage=off
 yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Todoist$" manage=off
-yabai -m rule --add app="Keyboard Maestro" manage=off
+# yabai -m rule --add app="^Todoist$" manage=off
+# yabai -m rule --add app="Keyboard Maestro" manage=off
+yabai -m rule --add app="CleanShot X" manage=off
 
 # Disable for system preferences and settings windows/apps
 yabai -m rule --add title="ESLint" manage=off
