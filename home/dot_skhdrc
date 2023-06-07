@@ -6,7 +6,7 @@ hyper - k : yabai -m window --focus north
 hyper - h : yabai -m window --focus west
 hyper - l : yabai -m window --focus east
 
-Change focus between external displays
+# Change focus between external displays
 shift + alt - j: yabai -m display --focus south
 shift + alt - k: yabai -m display --focus north
 shift + alt - h: yabai -m display --focus west
