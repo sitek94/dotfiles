@@ -25,41 +25,74 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Custom $PATH with extra locations.
-export PATH=$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/go/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
+
+# PATH ALTERATIONS
+# Start with current PATH
+PATH="$PATH:"
+
+# Python
+PATH="$PATH:$HOME/Library/Python/3.9/bin"
+
+# Homebrew
+PATH="$PATH:/opt/homebrew/bin"
+
+# Local bin and sbin
+PATH="$PATH:/usr/local/bin:/usr/local/sbin"
+
+# Personal bin
+PATH="$PATH:$HOME/bin"
+
+# Go
+PATH="$PATH:$HOME/go/bin"
+
+# Git
+PATH="$PATH:/usr/local/git/bin"
+
+# Composer
+PATH="$PATH:$HOME/.composer/vendor/bin"
+
+# Visual Studio Code
+PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Visual Studio Code Insiders
+export PATH="$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
+
 
 # ALIASES
 
-# better cat with syntax highlighting
+## better cat with syntax highlighting
 alias cat="bat"
 
-# Open webstorm app
+## Open webstorm app
 alias ws="open -a 'WebStorm.app'"
-# Open VSCode Insiders
-alias vsc="open -a 'Visual Studio Code - Insiders.app'"
 
-# ts-node
+## Open VSCode Insiders
+# alias vsc="open -a 'Visual Studio Code - Insiders.app'"
+alias c="\"/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code\""
+
+## ts-node
 alias ts="ts-node"
 
-# Update ZSH
+## Update ZSH
 alias sz="source ~/.zshrc"
 
-# Chezmoi
-alias cze="chezmoi edit"
-alias czu="chezmoi update"
-alias cza="chezmoi apply"
-alias czp="chezmoi git add . && chezmoi git -- commit -m 'update dotfiles' && chezmoi git push"
+## Dotfiles edit, update, apply and push
+alias de="c ~/.local/share/chezmoi"
+alias du="chezmoi update"
+alias da="chezmoi apply"
+alias dp="chezmoi git add . && chezmoi git -- commit -m 'update dotfiles' && chezmoi git push"
 
-# Yabai 
+## Yabai 
 alias yabr="brew services restart yabai"
 alias yabs="brew services start yabai"
 alias yabk="brew services stop yabai"
 
-# Dotfiles, zsh
+## zsh
 alias sz="source ~/.zshrc"
-alias dfu="czu && yabr"
 
-# Utils
+
+# UTILS
+## Kill port
 killport() {
   if lsof -i tcp:"$*" >/dev/null 2>&1; then
     if lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9 2>/dev/null; then
