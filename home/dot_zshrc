@@ -32,33 +32,34 @@ export PATH=$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:/usr/local/bin:/usr/l
 
 # ALIASES
 
-# Open webstorm app
+## Open webstorm app
 alias ws="open -a 'WebStorm.app'"
-# Open VSCode Insiders
+## Open VSCode Insiders
 alias vsc="open -a 'Visual Studio Code - Insiders.app'"
 
-# ts-node
+## ts-node
 alias ts="ts-node"
 
-# Update ZSH
-alias sz="source ~/.zshrc"
+## Dotfiles
+alias de="chezmoi edit"
+alias du="chezmoi update"
+alias da="chezmoi apply"
+alias dp="chezmoi git add . && chezmoi git -- commit -m 'update dotfiles' && chezmoi git push"
+alias ds="chezmoi apply && dp"
 
-# Chezmoi
-alias cze="chezmoi edit"
-alias czu="chezmoi update"
-alias cza="chezmoi apply"
-alias czp="chezmoi git add . && chezmoi git -- commit -m 'update dotfiles' && chezmoi git push"
-
-# Yabai 
+## Yabai 
 alias yabr="brew services restart yabai"
 alias yabs="brew services start yabai"
 alias yabk="brew services stop yabai"
 
-# Dotfiles, zsh
+## Zsh
 alias sz="source ~/.zshrc"
-alias dfu="czu && yabr"
 
-# Utils
+## Zscaler
+alias zscoff="sudo launchctl unload /Library/LaunchDaemons/com.zscaler.service.plist && sudo launchctl unload /Library/LaunchDaemons/com.zscaler.tunnel.plist"
+alias zscup="sudo launchctl load /Library/LaunchDaemons/com.zscaler.service.plist && sudo launchctl load /Library/LaunchDaemons/com.zscaler.tunnel.plist"
+
+# UTILS
 killport() {
   if lsof -i tcp:"$*" >/dev/null 2>&1; then
     if lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9 2>/dev/null; then
