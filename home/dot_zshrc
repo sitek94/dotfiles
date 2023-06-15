@@ -89,10 +89,8 @@ alias yabk="brew services stop yabai"
 ## zsh
 alias sz="source ~/.zshrc"
 
-## Zscaler
-alias zscoff="sudo launchctl unload /Library/LaunchDaemons/com.zscaler.service.plist && sudo launchctl unload /Library/LaunchDaemons/com.zscaler.tunnel.plist"
-alias zscup="sudo launchctl load /Library/LaunchDaemons/com.zscaler.service.plist && sudo launchctl load /Library/LaunchDaemons/com.zscaler.tunnel.plist"
-
+## work
+source $HOME/.zshrc.work
 
 # UTILS
 

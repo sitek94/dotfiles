@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# ALIASES
+
+## Dev
+alias neodev=""
+alias neotest=""
+alias neolocal=""
+
+## Zscaler
+alias zscoff="sudo launchctl unload /Library/LaunchDaemons/com.zscaler.service.plist && sudo launchctl unload /Library/LaunchDaemons/com.zscaler.tunnel.plist"
+alias zscup="sudo launchctl load /Library/LaunchDaemons/com.zscaler.service.plist && sudo launchctl load /Library/LaunchDaemons/com.zscaler.tunnel.plist"
+
