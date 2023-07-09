@@ -73,11 +73,8 @@ yabai -m rule --add title="Rename" manage=off
 yabai -m rule --add title="Settings$" manage=off
 yabai -m rule --add title="New Note$" manage=off
 
-# Explicitly enable for specific apps
-yabai -m rule --add app="Session" manage=on
-
 # make JetBrains products popup windows float
-apps='^(IntelliJ IDEA|WebStorm|WebStorm-EAP|GoLand|PyCharm)$'
+apps='^(IntelliJ IDEA|WebStorm|WebStorm\-EAP|GoLand|PyCharm)$'
 yabai -m rule --add app="JetBrains Toolbox" manage=off
 yabai -m rule --add app="${apps}" manage=off
 yabai -m rule --add app="${apps}" title="( – )" manage=on
