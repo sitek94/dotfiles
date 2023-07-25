@@ -76,10 +76,10 @@ alias ts="ts-node"
 alias sz="source ~/.zshrc"
 
 ## Dotfiles edit, update, apply and push
-alias de="c ~/.local/share/chezmoi"
-alias du="chezmoi update"
-alias da="chezmoi apply"
-alias dp="chezmoi git add . && chezmoi git -- commit -m 'update dotfiles' && chezmoi git push"
+alias dote="c ~/.local/share/chezmoi"
+alias dotu="chezmoi update"
+alias dota="chezmoi apply"
+alias dotp="chezmoi git add . && chezmoi git -- commit -m 'update dotfiles' && chezmoi git push"
 
 ## Yabai
 alias yabr="brew services restart yabai"
