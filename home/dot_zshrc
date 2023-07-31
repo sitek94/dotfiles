@@ -63,6 +63,10 @@ export PATH="$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Reso
 ## better cat with syntax highlighting
 alias cat="bat"
 
+## Git
+alias ginit="git init && git add . && git commit -m 'init'"
+alias gc="git commit -m"
+
 ## Open webstorm app
 alias ws="open -a 'WebStorm.app'"
 
