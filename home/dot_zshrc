@@ -26,6 +26,22 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
+# TERMINAL TITLE
+
+# Set name of the application in the terminal tab
+function set_name () {
+  local rel_path="${PWD/$HOME/~}"
+  echo -ne "\033]0;$rel_path\007"
+}
+
+# Update title on directory change
+if [ -n "$ZSH_VERSION" ]; then
+  precmd_functions+=(set_name)
+elif [ -n "$BASH_VERSION" ]; then
+  PROMPT_COMMAND='set_name'
+fi
+
+
 # PATH ALTERATIONS
 # Start with current PATH
 PATH="$PATH:"
@@ -90,6 +106,7 @@ alias yabk="brew services stop yabai"
 ## zsh
 alias sz="source ~/.zshrc"
 
+
 ## work
 source $HOME/.zshrc.work
 
@@ -107,3 +124,4 @@ killport() {
     echo -e "${YELLOW}There is nothing running on port $*${RESET}"
   fi
 }
+
