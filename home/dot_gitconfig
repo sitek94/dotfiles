@@ -1,6 +1,10 @@
 [user]
-  name = Maciek Sitkowski
-  email = msitkowski94@gmail.com
+	name = Maciek Sitkowski
+	email = msitkowski94@gmail.com
+
+[includeIf "gitdir:~/nexontis/"]
+    path = .gitconfig.work
+
 [core]
   editor = vi
   excludesfile = ~/.gitignore

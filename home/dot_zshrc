@@ -70,6 +70,10 @@ PATH="$PATH:$HOME/.composer/vendor/bin"
 # Visual Studio Code
 PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+# fnm
+PATH="$PATH:/home/$USER/.fnm"
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive)"
+
 # Visual Studio Code Insiders
 export PATH="$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
 
@@ -106,9 +110,9 @@ alias yabk="brew services stop yabai"
 ## zsh
 alias sz="source ~/.zshrc"
 
-
 ## work
 source $HOME/.zshrc.work
+
 
 # UTILS
 
