@@ -88,7 +88,7 @@ alias gc="git commit -m"
 alias ws="open -a 'WebStorm.app'"
 
 ## Open VSCode Insiders
-alias c="open -a 'Visual Studio Code - Insiders.app'"
+alias c="open -a 'Visual Studio Code.app'"
 
 ## ts-node
 alias ts="ts-node"
