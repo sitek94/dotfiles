@@ -7,7 +7,7 @@
 
 [core]
   editor = vi
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore_global
   autocrlf = input
 [color]
   branch = auto

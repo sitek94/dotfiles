@@ -15,3 +15,6 @@ yarn-error.log
 
 # eslint
 .eslintcache
+
+# Maciek's utils
+**/.maciek
