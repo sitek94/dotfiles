@@ -72,7 +72,7 @@ PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # fnm
 PATH="$PATH:/home/$USER/.fnm"
-eval "$(fnm env --use-on-cd --version-file-strategy=recursive)"
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled)"
 
 # Visual Studio Code Insiders
 export PATH="$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
