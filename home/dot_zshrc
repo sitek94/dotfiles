@@ -25,6 +25,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Bun completions
+[ -s "/Users/sitkom/.bun/_bun" ] && source "/Users/sitkom/.bun/_bun"
 
 # TERMINAL TITLE
 
@@ -86,6 +88,9 @@ alias gc="git commit -m"
 
 ## Open webstorm app
 alias ws="open -a 'WebStorm.app'"
+
+## Bun 
+alias b="bun"
 
 ## Open VSCode Insiders
 alias c="open -a 'Visual Studio Code.app'"
