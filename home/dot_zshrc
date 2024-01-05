@@ -92,7 +92,7 @@ alias ws="open -a 'WebStorm.app'"
 ## Bun 
 alias b="bun"
 
-## Open VSCode Insiders
+## Open VSCode
 alias c="open -a 'Visual Studio Code.app'"
 
 ## ts-node
