@@ -76,8 +76,9 @@ PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 PATH="$PATH:/home/$USER/.fnm"
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled)"
 
+
 # Visual Studio Code Insiders
-export PATH="$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
+# export PATH="$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
 
 
 # ALIASES
@@ -112,12 +113,20 @@ alias yabr="brew services restart yabai"
 alias yabs="brew services start yabai"
 alias yabk="brew services stop yabai"
 
-## zsh
+## Source Zsh
 alias sz="source ~/.zshrc"
 
 ## work
 source $HOME/.zshrc.work
 
+
+# OTHER
+
+## Setup zoxide (better cd)
+eval "$(zoxide init --cmd  cd zsh)"
+
+## Setup fzf (fuzzy finder)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # UTILS
 
