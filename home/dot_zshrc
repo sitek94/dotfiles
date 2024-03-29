@@ -19,6 +19,8 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source <(kubectl completion zsh)
+
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
