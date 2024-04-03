@@ -1,0 +1,16 @@
+name: Jarvis
+windows:
+  - tabs:
+      - title: jarvis
+        color: green
+        layout:
+          split_direction: horizontal
+          panes:
+            - cwd: ~/code/jarvis
+              commands:
+                - exec: code .
+                - exec: bun dev
+            - cwd: ~/code/api
+              commands:
+                - exec: code .
+                - exec: npm run dev
