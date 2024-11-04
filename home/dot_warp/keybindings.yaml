@@ -1,3 +1,4 @@
 ---
-"input:open_completion_suggestions": ctrl-f
-"editor_view:right": tab
+'workspace:new_tab': cmd-t
+'editor_view:right': tab
+'input:open_completion_suggestions': ctrl-f

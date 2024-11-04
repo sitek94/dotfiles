@@ -92,7 +92,7 @@ alias ws="open -a 'WebStorm.app'"
 ## Bun 
 alias b="bun"
 
-# Pytohn 
+# Python 
 alias py="python3"
 
 ## Open VSCode
