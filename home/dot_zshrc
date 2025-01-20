@@ -70,6 +70,9 @@ export PATH="$PATH:/usr/local/git/bin"
 # Composer
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
+# Cargo
+export PATH="$PATH:$HOME/.cargo/bin"
+
 # Visual Studio Code
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
