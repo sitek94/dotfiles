@@ -70,6 +70,12 @@ export PATH="$PATH:/usr/local/git/bin"
 # Composer
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
+# Hana DB Client
+export PATH="$PATH:/Applications/sap/hdbclient"
+
+# NPM global packages
+export PATH="$PATH:$HOME/.npm-global/bin"
+
 # Cargo
 export PATH="$PATH:$HOME/.cargo/bin"
 
