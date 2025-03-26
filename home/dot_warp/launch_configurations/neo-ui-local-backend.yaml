@@ -1,23 +1,22 @@
-name: Neo-ui (local backend)
+name: PaPM (local backend)
 windows:
   - tabs:
       - title: neo-ui
         layout:
-          cwd: /Users/maciek/code/neo-ui
+          cwd: /Users/sitkom/nexontis/neo-ui
           commands:
+            - exec: c /Users/sitkom/nexontis/neo-ui
             - exec: yarn start
         color: green
       - title: local-router
         layout:
-          cwd: /Users/maciek/code/neo-ui/packages/local-router
+          cwd: /Users/sitkom/nexontis/local-router
           commands:
-            - exec:
-                node -r dotenv/config setup.js dotenv_config_path='.env.local'
-            - exec: yarn start
+            - exec: .maciek/start-local-backend.sh
         color: yellow
-      - title: backend
+      - title: neo-backend
         layout:
-          cwd: /Users/maciek/code/backend
+          cwd: /Users/sitkom/nexontis/neo-backend
           commands:
-            - exec: yarn nx serve neo-backend --watch
+            - exec: pnpm nx serve neo-backend
         color: magenta
