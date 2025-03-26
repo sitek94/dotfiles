@@ -1,22 +1,23 @@
 name: PaPM (local backend)
 windows:
   - tabs:
-      - title: neo-ui
+      - title: PaPM Development
         layout:
-          cwd: /Users/sitkom/nexontis/neo-ui
-          commands:
-            - exec: c /Users/sitkom/nexontis/neo-ui
-            - exec: yarn start
+          split_direction: horizontal
+          panes:
+            - split_direction: vertical
+              panes:
+                - title: local-router
+                  cwd: /Users/sitkom/nexontis/local-router
+                  commands:
+                    - exec: .maciek/start-local-backend.sh
+                - title: neo-ui
+                  cwd: /Users/sitkom/nexontis/neo-ui
+                  commands:
+                    - exec: c /Users/sitkom/nexontis/papm.code-workspace
+                    - exec: yarn start
+            - title: neo-backend
+              cwd: /Users/sitkom/nexontis/neo-backend
+              commands:
+                - exec: pnpm nx serve neo-backend
         color: green
-      - title: local-router
-        layout:
-          cwd: /Users/sitkom/nexontis/local-router
-          commands:
-            - exec: .maciek/start-local-backend.sh
-        color: yellow
-      - title: neo-backend
-        layout:
-          cwd: /Users/sitkom/nexontis/neo-backend
-          commands:
-            - exec: pnpm nx serve neo-backend
-        color: magenta
