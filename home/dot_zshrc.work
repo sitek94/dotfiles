@@ -8,7 +8,7 @@ alias neotest=""
 alias neolocal=""
 
 ## Zscaler
-export NODE_TLS_REJECT_UNAUTHORIZED=0
+export NODE_TLS_REJECT_UNAUTHORIZED=1
 export NODE_EXTRA_CA_CERTS=/Users/sitkom/.zscaler/zscaler.crt
 alias zscoff="sudo launchctl unload /Library/LaunchDaemons/com.zscaler.service.plist && sudo launchctl unload /Library/LaunchDaemons/com.zscaler.tunnel.plist"
 alias zscup="sudo launchctl load /Library/LaunchDaemons/com.zscaler.service.plist && sudo launchctl load /Library/LaunchDaemons/com.zscaler.tunnel.plist"
