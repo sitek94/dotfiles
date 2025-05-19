@@ -1,5 +1,13 @@
 #!/bin/zsh
 
+# -----------------------------------------------------------------------------
+# --- OH-MY-ZSH and Terminal ---
+# -----------------------------------------------------------------------------
+
+# Source oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
+
 # Colors
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
@@ -9,21 +17,20 @@ RESET=$(tput sgr0)
 # Disable compfix warning
 ZSH_DISABLE_COMPFIX=true
 
-# Path to oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
 # Theme
 ZSH_THEME="robbyrussell"
 
 # Plugins
-plugins=(git)
+plugins=(
+  git
 
-source $ZSH/oh-my-zsh.sh
-source <(kubectl completion zsh)
-
-# Bun completions
-[ -s "/Users/sitkom/.bun/_bun" ] && source "/Users/sitkom/.bun/_bun"
-
+  # TODO: Check these out
+  # vscode
+  # k 
+  # vscode
+  # zsh-autosuggestions
+  # zsh-syntax-highlighting
+)
 
 # TERMINAL TITLE
 
@@ -41,19 +48,54 @@ elif [ -n "$BASH_VERSION" ]; then
 fi
 
 
-# PATH ALTERATIONS
+
+# -----------------------------------------------------------------------------
+# --- Lazy load package managers ---
+# -----------------------------------------------------------------------------
+
+## Pyenv (lazy load)
+pyenv() {
+  unset -f pyenv
+  export PYENV_ROOT="$HOME/.pyenv"
+  [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(command pyenv init -)"
+  pyenv "$@"
+}
+
+## fnm (lazy load)
+fnm() {
+  unset -f fnm
+  eval "$(command fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled)"
+  fnm "$@"
+}
+
+## Kubernetes (lazy load)
+_kubectl_lazy_load() {
+  unset -f kubectl _kubectl_lazy_load
+  source <(kubectl completion zsh)
+  kubectl "$@"
+}
+alias kubectl="_kubectl_lazy_load"
+
+## Bun (lazy load)
+_bun_lazy_load() {
+  unset -f bun _bun_lazy_load
+  [ -s "/Users/sitkom/.bun/_bun" ] && source "/Users/sitkom/.bun/_bun"
+  bun "$@"
+}
+alias bun="_bun_lazy_load"
+
+
+
+# -----------------------------------------------------------------------------
+# --- PATH ALTERATIONS ---
+# -----------------------------------------------------------------------------
 
 # Homebrew
 export PATH="$PATH:/opt/homebrew/bin"
 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # fnm
-PATH="$PATH:/home/$USER/.fnm"
-eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled)"
+export PATH="$PATH:/home/$USER/.fnm"
 
 # Local bin and sbin
 export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
@@ -79,6 +121,9 @@ export PATH="$PATH:$HOME/.cargo/bin"
 # Visual Studio Code
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+# My custom scripts
+export PATH="$PATH:$HOME/code/productivity/dotfiles/scripts/bin"
+
 # Export PATH to apply all changes
 export PATH
 
@@ -86,7 +131,10 @@ export PATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
 
 
-# ALIASES
+
+# -----------------------------------------------------------------------------
+# --- ALIASES ---
+# -----------------------------------------------------------------------------
 
 ## Git
 alias ginit="git init && git add . && git commit -m 'init'"
@@ -125,16 +173,10 @@ alias sz="source ~/.zshrc"
 source $HOME/.zshrc.work
 
 
-# OTHER
 
-## Setup zoxide (better cd)
-eval "$(zoxide init --cmd  cd zsh)"
-
-## Setup fzf (fuzzy finder)
-source <(fzf --zsh)
-
-
-# UTILS
+# -----------------------------------------------------------------------------
+# --- UTILS ---
+# -----------------------------------------------------------------------------
 
 ## Kill port
 killport() {
@@ -148,3 +190,15 @@ killport() {
     echo -e "${YELLOW}There is nothing running on port $*${RESET}"
   fi
 }
+
+
+
+# -----------------------------------------------------------------------------
+# --- OTHER ---
+# -----------------------------------------------------------------------------
+
+## Setup zoxide (better cd)
+eval "$(zoxide init --cmd  cd zsh)"
+
+## Setup fzf (fuzzy finder)
+source <(fzf --zsh)
