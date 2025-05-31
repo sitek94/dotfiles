@@ -2,6 +2,11 @@
   "git.enableSmartCommit": true,
   "git.rebaseWhenSync": true,
   "files.associations": {
-    "yabairc": "shellscript"
+    "yabairc": "shellscript",
+    "dot_gitconfig": "ini",
+    "dot_gitconfig.work": "ini",
+    "dot_gitignore_global": "ignore",
+    "dot_zshrc": "shellscript",
+    "dot_zshrc.work": "shellscript",
   }
 }

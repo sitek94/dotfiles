@@ -62,13 +62,6 @@ pyenv() {
   pyenv "$@"
 }
 
-## fnm (lazy load)
-fnm() {
-  unset -f fnm
-  eval "$(command fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled)"
-  fnm "$@"
-}
-
 ## Kubernetes (lazy load)
 _kubectl_lazy_load() {
   unset -f kubectl _kubectl_lazy_load
@@ -76,14 +69,6 @@ _kubectl_lazy_load() {
   kubectl "$@"
 }
 alias kubectl="_kubectl_lazy_load"
-
-## Bun (lazy load)
-_bun_lazy_load() {
-  unset -f bun _bun_lazy_load
-  [ -s "/Users/sitkom/.bun/_bun" ] && source "/Users/sitkom/.bun/_bun"
-  bun "$@"
-}
-alias bun="_bun_lazy_load"
 
 
 
@@ -121,8 +106,14 @@ export PATH="$PATH:$HOME/.cargo/bin"
 # Visual Studio Code
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+# Windsurf
+export PATH="$PATH:/$HOME/.codeium/windsurf/bin"
+
 # My custom scripts
 export PATH="$PATH:$HOME/code/productivity/dotfiles/scripts/bin"
+
+# Bun
+export PATH="$PATH:$HOME/.bun/bin"
 
 # Export PATH to apply all changes
 export PATH
@@ -137,8 +128,11 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
 # -----------------------------------------------------------------------------
 
 ## Git
-alias ginit="git init && git add . && git commit -m 'init'"
+alias gai="git llm"
 alias gc="git commit -m"
+alias ginit="git init && git add . && git commit -m 'init'"
+alias gl="git l"
+alias gs="git status"
 
 ## Open webstorm app
 alias ws="open -a 'WebStorm.app'"
@@ -146,8 +140,9 @@ alias ws="open -a 'WebStorm.app'"
 ## Bun 
 alias b="bun"
 
-# Python 
+# Python
 alias py="python3"
+alias pip="pip3"
 
 ## Open VSCode
 alias c="open -a 'Cursor.app'"
@@ -168,6 +163,9 @@ alias yabk="brew services stop yabai"
 
 ## Source Zsh
 alias sz="source ~/.zshrc"
+
+## Homelab
+alias homelab-deploy="ssh maciek@lenovo 'cd ~/homelab && ./scripts/deploy.sh'"
 
 ## work
 source $HOME/.zshrc.work
@@ -202,3 +200,9 @@ eval "$(zoxide init --cmd  cd zsh)"
 
 ## Setup fzf (fuzzy finder)
 source <(fzf --zsh)
+
+## Source Bun
+[ -s "/Users/sitkom/.bun/_bun" ] && source "/Users/sitkom/.bun/_bun"
+
+## Setup fnm
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled)"
