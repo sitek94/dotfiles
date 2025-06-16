@@ -19,5 +19,5 @@ windows:
             - title: neo-backend
               cwd: /Users/sitkom/nexontis/neo-backend
               commands:
-                - exec: pnpm nx serve neo-backend
+                - exec: VCAP_SERVICES=$(cat .maciek/vcap-new.json) pnpm start neo-backend
         color: green

@@ -115,6 +115,9 @@ export PATH="$PATH:$HOME/code/productivity/dotfiles/scripts/bin"
 # Bun
 export PATH="$PATH:$HOME/.bun/bin"
 
+# pipx (python)
+export PATH="$PATH:$HOME/.local/bin"
+
 # Export PATH to apply all changes
 export PATH
 
